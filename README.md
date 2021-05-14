@@ -12,7 +12,7 @@ Options for the launcher can be obtained by running `gitfeatures --help`
 
 ## Available Scripts
 
-### yarn start
+### yarn dev
 
 Runs the app in the development mode.
 Open http://localhost:8080 to view it in the browser.
@@ -22,8 +22,11 @@ You will also see any lint errors in the console.
 
 ### yarn test
 
-Launches the test runner in the interactive watch mode.
-See the section about running tests for more information.
+Runs unit tests
+
+### yarn test:integration
+
+Runs gherkin step tests
 
 ### yarn build
 
