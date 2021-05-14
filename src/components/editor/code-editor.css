@@ -1,0 +1,11 @@
+.editor-pre {
+    outline: 0;
+}
+
+.editor-pre .token.important {
+    font-weight: normal !important;
+}
+
+.editor-textarea {
+    outline: 0;
+}

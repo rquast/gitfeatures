@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+const path = require('path');
+const fs = require('fs');
+process.chdir(path.resolve(__dirname, '..'));
+let title, description, port, proxies, config, isLaunchingBrowser = undefined;
+process.argv.forEach(function (val, index, array) {
+  switch (val) {
+    case '--help':
+      console.log(`
+      GitFeatures CLI Launcher & CORS Proxy
+      
+      Usage: gitfeatures [options]
+      
+      Example: gitfeatures -c custom.json -t "My Spec" -d "My company: My specification drafting tool" -p 4999 -h "myspec.mycompany.com:4999" 
+       
+      Options:
+        -o true/false: automatically launch browser
+        -c JSON configuration filename
+        -t title: Page title
+        -d description: Meta description
+        -p port number: port number to listen on
+        -h space separated list of allowed hosts in the Content Security Policy
+      `);
+      process.exit(0);
+    case '-c':
+      try {
+        config = JSON.parse(fs.readFileSync(path.resolve(__dirname, process.argv[index + 1].trim()), { encoding: 'utf8', flag: 'r' }));
+      } catch (e) {
+        console.error(e);
+      }
+      break;
+    case '-t':
+      title = process.argv[index + 1];
+      break;
+    case '-d':
+      description = process.argv[index + 1];
+      break;
+    case '-p':
+      port = Number(process.argv[index + 1]);
+      break;
+    case '-h':
+      proxies = process.argv[index + 1];
+      break;
+    case '-o':
+      isLaunchingBrowser = process.argv[index + 1].trim().toLowerCase() === 'true';
+      break;
+    default:
+  }
+});
+
+require('../index.js')(title, description, port, proxies, config, isLaunchingBrowser);

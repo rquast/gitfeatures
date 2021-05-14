@@ -1,0 +1,10 @@
+.idea
+.vscode
+.build
+build
+coverage
+web_modules
+node_modules
+yarn-error.log
+package-lock.json
+public/index.html

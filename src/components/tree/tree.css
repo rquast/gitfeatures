@@ -1,0 +1,381 @@
+.st__story {
+    background-color: #FAF089;
+}
+
+.st__storyDark {
+    color: white;
+    background-color: #d69e2e;
+}
+
+.st__rule {
+    background-color: #90CDF4;
+}
+
+.st__ruleDark {
+    color: white;
+    background-color: #3182ce;
+}
+
+.st__example {
+    background-color: #9AE6B4;
+}
+
+.st__exampleDark {
+    color: white;
+    background-color: #38a169;
+}
+
+.st__map {
+    background-color: #9AE6B4;
+}
+
+.st__mapDark {
+    color: white;
+    background-color: #38a169;
+}
+
+.st__question {
+    background-color: #FEB2B2;
+}
+
+.st__questionDark {
+    color: white;
+    background-color: #e53e3e;
+}
+
+.st__rowWrapper {
+    padding: 2px 2px 2px 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.st__rtl.st__rowWrapper {
+    padding: 2px 0 2px 2px;
+}
+
+.st__row {
+    height: 100%;
+    white-space: nowrap;
+    display: flex;
+}
+.st__row > * {
+    box-sizing: border-box;
+}
+
+/**
+ * The outline of where the element will go if dropped, displayed while dragging
+ */
+.st__rowLandingPad,
+.st__rowCancelPad {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+.st__rowLandingPad > *,
+.st__rowCancelPad > * {
+    opacity: 0 !important;
+}
+.st__rowLandingPad::before,
+.st__rowCancelPad::before {
+    background-color: lightblue;
+    border: 3px dashed white;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/**
+ * Alternate appearance of the landing pad when the dragged location is invalid
+ */
+.st__rowCancelPad::before {
+    background-color: #e6a8ad;
+}
+
+/**
+ * Nodes matching the search conditions are highlighted
+ */
+.st__rowSearchMatch {
+    outline: solid 3px #0080ff;
+}
+
+.st__rowSelection {
+    border-radius: 6px;
+    border: 2px dotted #3182ce;
+}
+
+/**
+ * The node that matches the search conditions and is currently focused
+ */
+.st__rowSearchFocus {
+    outline: solid 3px #fc6421;
+}
+
+.st__rowContents,
+.st__rowLabel,
+.st__rowToolbar,
+.st__moveHandle,
+.st__toolbarButton {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.st__rowContents {
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    padding: 0 5px 0 10px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.st__folder {
+    background-color: #E2E8F0;
+}
+
+.st__folderDark {
+    color: white;
+    background-color: #718096;
+}
+
+.st__feature {
+    background-color: #D6BCFA;
+}
+
+.st__featureDark {
+    color: white;
+    background-color: #805AD5;
+}
+
+.st__rtl.st__rowContents {
+    border-right: none;
+    border-left: solid #bbb 1px;
+    padding: 0 10px 0 5px;
+}
+
+.st__rowContentsDragDisabled {
+    border-left: solid #bbb 1px;
+}
+
+.st__rtl.st__rowContentsDragDisabled {
+    border-right: solid #bbb 1px;
+    border-left: solid #bbb 1px;
+}
+
+.st__rowLabel {
+    flex: 0 1 auto;
+    padding-right: 10px;
+}
+.st__rtl.st__rowLabel {
+    padding-left: 10px;
+    padding-right: inherit;
+}
+
+.st__rowToolbar {
+    flex: 0 1 auto;
+    display: flex;
+}
+
+.st__moveHandle,
+.st__loadingHandle {
+    height: 100%;
+    width: 28px;
+    cursor: move;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    z-index: 1;
+}
+
+.st__loadingHandle {
+    cursor: default;
+}
+
+@keyframes pointFade {
+    0%,
+    19.999%,
+    100% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+}
+
+.st__loadingCircle {
+    width: 80%;
+    height: 80%;
+    margin: 10%;
+    position: relative;
+}
+
+.st__loadingCirclePoint {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.st__rtl.st__loadingCirclePoint {
+    right: 0;
+    left: initial;
+}
+
+.st__loadingCirclePoint::before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 11%;
+    height: 30%;
+    background-color: #fff;
+    border-radius: 30%;
+    animation: pointFade 800ms infinite ease-in-out both;
+}
+.st__loadingCirclePoint:nth-of-type(1) {
+    transform: rotate(0deg);
+}
+.st__loadingCirclePoint:nth-of-type(7) {
+    transform: rotate(180deg);
+}
+.st__loadingCirclePoint:nth-of-type(1)::before,
+.st__loadingCirclePoint:nth-of-type(7)::before {
+    animation-delay: -800ms;
+}
+.st__loadingCirclePoint:nth-of-type(2) {
+    transform: rotate(30deg);
+}
+.st__loadingCirclePoint:nth-of-type(8) {
+    transform: rotate(210deg);
+}
+.st__loadingCirclePoint:nth-of-type(2)::before,
+.st__loadingCirclePoint:nth-of-type(8)::before {
+    animation-delay: -666ms;
+}
+.st__loadingCirclePoint:nth-of-type(3) {
+    transform: rotate(60deg);
+}
+.st__loadingCirclePoint:nth-of-type(9) {
+    transform: rotate(240deg);
+}
+.st__loadingCirclePoint:nth-of-type(3)::before,
+.st__loadingCirclePoint:nth-of-type(9)::before {
+    animation-delay: -533ms;
+}
+.st__loadingCirclePoint:nth-of-type(4) {
+    transform: rotate(90deg);
+}
+.st__loadingCirclePoint:nth-of-type(10) {
+    transform: rotate(270deg);
+}
+.st__loadingCirclePoint:nth-of-type(4)::before,
+.st__loadingCirclePoint:nth-of-type(10)::before {
+    animation-delay: -400ms;
+}
+.st__loadingCirclePoint:nth-of-type(5) {
+    transform: rotate(120deg);
+}
+.st__loadingCirclePoint:nth-of-type(11) {
+    transform: rotate(300deg);
+}
+.st__loadingCirclePoint:nth-of-type(5)::before,
+.st__loadingCirclePoint:nth-of-type(11)::before {
+    animation-delay: -266ms;
+}
+.st__loadingCirclePoint:nth-of-type(6) {
+    transform: rotate(150deg);
+}
+.st__loadingCirclePoint:nth-of-type(12) {
+    transform: rotate(330deg);
+}
+.st__loadingCirclePoint:nth-of-type(6)::before,
+.st__loadingCirclePoint:nth-of-type(12)::before {
+    animation-delay: -133ms;
+}
+.st__loadingCirclePoint:nth-of-type(7) {
+    transform: rotate(180deg);
+}
+.st__loadingCirclePoint:nth-of-type(13) {
+    transform: rotate(360deg);
+}
+.st__loadingCirclePoint:nth-of-type(7)::before,
+.st__loadingCirclePoint:nth-of-type(13)::before {
+    animation-delay: 0ms;
+}
+
+.st__rowTitle {
+    font-size: 70%;
+    line-height: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #222;
+}
+
+.st__rowTitleWithSubtitle {
+    font-size: 85%;
+    display: block;
+    height: 0.8rem;
+}
+
+.st__rowSubtitle {
+    font-size: 70%;
+    line-height: 1;
+}
+
+.st__collapseButton,
+.st__expandButton {
+    appearance: none;
+    position: absolute;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.st__rtl.st__collapseButton,
+.st__rtl.st__expandButton {
+    transform: translate(50%, -50%);
+}
+.st__collapseButton:focus,
+.st__expandButton:focus {
+    box-shadow: 0 0 0 1px #000, 0 0 1px 3px #83bef9;
+    outline: none;
+}
+.st__collapseButton:hover:not(:active),
+.st__expandButton:hover:not(:active) {
+    background-size: 24px;
+    height: 20px;
+    width: 20px;
+}
+
+/**
+ * Line for under a node with children
+ */
+.st__lineChildren {
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+}
+.st__lineChildren::after {
+    content: '';
+    position: absolute;
+    background-color: #CBD5E0;
+    width: 1px;
+    left: 50%;
+    bottom: 0;
+    height: 10px;
+}
+
+.st__rtl.st__lineChildren::after {
+    right: 50%;
+    left: initial;
+}
