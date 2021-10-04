@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' localhost:3000 cors.gitfeatures.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob: 'unsafe-eval';">
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GitFeatures: BDD specification writing tool" />
+  <meta name="gf:config" content="%7B%22currentRepositoryURL%22%3A%22https%3A%2F%2Fgithub.com%2Fsengac%2Fgitfeatures-spec.git%22%2C%22localRepositories%22%3A%7B%7D%2C%22isCommitPushChecked%22%3Afalse%2C%22gitProfiles%22%3A%7B%22Default%22%3A%7B%22profile-name%22%3A%22Default%22%2C%22cors-proxy-address%22%3A%22https%3A%2F%2Fcors.gitfeatures.com%22%2C%22author-name%22%3A%22Sir%20Testsalot%22%2C%22author-email%22%3A%22sir%40testsalot.com%22%2C%22default-branch%22%3A%22master%22%2C%22remote-name%22%3A%22origin%22%2C%22pgp-private-key%22%3A%22%22%2C%22username%22%3A%22sirtestsalot%22%2C%22password%22%3A%22%22%7D%7D%7D" />
+  <title>GitFeatures</title>
+  <style type="text/css">
+      html, body {
+          overscroll-behavior: contain;
+          overscroll-behavior-y: contain;
+          height: 100%;
+          margin: 0;
+      }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    window.global = window
+  </script>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

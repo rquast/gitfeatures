@@ -1,4 +1,7 @@
-import type { GetTreeItemChildrenFn, TreeItem } from 'react-sortable-tree';
+import type {
+  GetTreeItemChildrenFn,
+  TreeItem
+} from '@nosferatu500/react-sortable-tree';
 import type { FeatureToggles, MapNode, SpecNode } from '../types';
 
 const immutableSetNodeProperty = function (

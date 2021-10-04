@@ -1,6 +1,5 @@
-import React from 'react';
 import { theme, ChakraProvider, ColorModeScript } from '@chakra-ui/react';
-import 'react-sortable-tree/style.css'; // only import once
+import '@nosferatu500/react-sortable-tree/style.css'; // only import once
 import Fonts from '../utils/Fonts';
 import { AppStateProvider } from '../context/AppStateContext';
 import { SpecificationProvider } from '../context/SpecificationContext';

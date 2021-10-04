@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import SortableTree, { isDescendant, TreeItem } from 'react-sortable-tree';
+import SortableTree, { isDescendant } from '@nosferatu500/react-sortable-tree';
+import type { TreeItem } from '@nosferatu500/react-sortable-tree';
 import TreeNodeRenderer from '../renderer/TreeNodeRenderer';
 import { store as exampleMapStore } from '../../context/ExampleMapContext';
 import { Flex, Box, Text, useColorMode } from '@chakra-ui/react';

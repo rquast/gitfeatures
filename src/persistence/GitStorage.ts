@@ -1,9 +1,11 @@
 // @ts-ignore
 import FS from '@isomorphic-git/lightning-fs';
-import git, { CallbackFsClient, PromiseFsClient } from 'isomorphic-git';
+import git from 'isomorphic-git';
+import type { CallbackFsClient, PromiseFsClient } from 'isomorphic-git/index';
+
 // @ts-ignore
 import { pgp } from '@isomorphic-git/pgp-plugin';
-import http from 'isomorphic-git/http/web';
+import http from 'isomorphic-git/http/web/index.js';
 import YAML from 'yaml';
 import JSZip from 'jszip';
 import {
