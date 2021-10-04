@@ -3,7 +3,7 @@
     "dev": "vite",
     "build": "cross-env NODE_ENV=production tsc && vite build",
     "serve": "vite preview",
-    "bundle": "cross-env NODE_ENV=production tsc && vite build && cd dist && npm pack",
+    "bundle": "cross-env NODE_ENV=production tsc && vite build && node prepare.js && cd dist && npm pack",
     "test": "web-test-runner \"src/**/*.test.{js,jsx,ts,tsx}\"",
     "test:integration": "web-test-runner \"src/**/*.steps.{js,jsx,ts,tsx}\" --node-resolve",
     "test:coverage": "web-test-runner \"src/**/*.test.{js,jsx,ts,tsx}\" --coverage",
