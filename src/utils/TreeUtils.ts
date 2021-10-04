@@ -1,6 +1,7 @@
 import type {
   GetTreeItemChildrenFn,
   TreeItem
+  //@ts-ignore
 } from '@nosferatu500/react-sortable-tree';
 import type { FeatureToggles, MapNode, SpecNode } from '../types';
 
