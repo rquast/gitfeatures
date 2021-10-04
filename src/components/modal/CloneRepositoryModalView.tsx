@@ -100,10 +100,10 @@ function CloneRepositoryModalView({
         duration: 9000,
         isClosable: true
       });
-    } catch (e) {
+    } catch (err: any) {
       toast({
         title: 'Init Failed.',
-        description: e.message,
+        description: err.message,
         status: 'error',
         duration: 9000,
         isClosable: true
@@ -149,10 +149,10 @@ function CloneRepositoryModalView({
         specificationContext.dispatch(reloadAction(true));
         appStateContext.dispatch(reloadAction());
       })();
-    } catch (e) {
+    } catch (err: any) {
       toast({
         title: 'Clone Failed.',
-        description: e.message,
+        description: err.message,
         status: 'error',
         duration: 9000,
         isClosable: true

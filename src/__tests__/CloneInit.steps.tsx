@@ -60,7 +60,7 @@ const TestWrapper = function ({
 };
 
 //@ts-ignore
-readFile({ path: './CloneInit.feature' }).then((content) => {
+readFile({ path: './CloneInit.feature' }).then((content: any) => {
   const feature = parseFeature(content, getGherkinTestKitConfiguration({}));
   defineFeature(feature, (test) => {
     test('Valid URL given for something that exists in localStorage', ({

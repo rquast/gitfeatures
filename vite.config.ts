@@ -48,6 +48,11 @@ const resolveFixup = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      buffer: 'buffer'
+    }
+  },
   optimizeDeps: {
     esbuildOptions: {
       plugins: [resolveFixup]

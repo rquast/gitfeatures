@@ -28,9 +28,7 @@ interface MarkdownRendererProps {
 let markdownRendererProps: MarkdownRendererProps;
 
 function getCoreProps(props: { [x: string]: any }) {
-  return props['data-sourcepos']
-    ? { 'data-sourcepos': props['data-sourcepos'] }
-    : {};
+  return props.sourcePosition ? { sourceposition: props.sourcePosition } : {};
 }
 
 const onDownloadFile = async (file: string) => {

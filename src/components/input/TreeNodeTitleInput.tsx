@@ -177,9 +177,9 @@ function TreeNodeTitleInput({
       }
       setIsInvalid(false);
       setIsEditing(false);
-    } catch (e) {
+    } catch (err: any) {
       setIsInvalid(true);
-      setError(e.message);
+      setError(err.message);
     }
   };
 

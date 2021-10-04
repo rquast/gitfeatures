@@ -185,15 +185,15 @@ function ResponsiveHeader() {
         duration: 9000,
         isClosable: true
       });
-    } catch (e) {
+    } catch (err: any) {
       toast({
         title: 'Push Failed.',
-        description: e.message,
+        description: err.message,
         status: 'error',
         duration: 9000,
         isClosable: true
       });
-      console.log(e);
+      console.log(err);
     } finally {
       setActionButtonLocked(false);
     }
@@ -230,11 +230,11 @@ function ResponsiveHeader() {
       specificationContext.dispatch(reloadAction(true));
       exampleMapContext.dispatch(reloadAction());
       appStateContext.dispatch(reloadAction(true));
-    } catch (e) {
+    } catch (err: any) {
       setActionButtonLocked(false);
       toast({
         title: 'Rollback Failed.',
-        description: e.message,
+        description: err.message,
         status: 'error',
         duration: 9000,
         isClosable: true
