@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
+//@ts-ignore
+import ReactMarkdown from 'react-markdown/react-markdown.min';
 import MarkdownRenderer from '../renderer/MarkdownRenderer';
 import {
   Button,
