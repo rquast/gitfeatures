@@ -8,6 +8,12 @@ const ignoredBrowserLogs = [
 ];
 
 module.exports = {
+  testFramework: {
+    config: {
+      ui: 'bdd',
+      timeout: '3600000',
+    },
+  },
   testsFinishTimeout: 3600000, // 1 hour
   coverageConfig: {
     include: [
@@ -50,24 +56,22 @@ module.exports = {
       product: 'chromium',
       launchOptions: {
         headless: false,
-        devtools: false
+        devtools: true
       },
     }),
-    /*
-    playwrightLauncher({
-      product: 'firefox',
-      launchOptions: {
-        headless: true,
-        devtools: false
-      },
-    }),
-    playwrightLauncher({
-      product: 'webkit',
-      launchOptions: {
-        headless: true,
-        devtools: false
-      },
-    }),
-    */
+    // playwrightLauncher({
+    //   product: 'firefox',
+    //   launchOptions: {
+    //     headless: true,
+    //     devtools: false
+    //   },
+    // }),
+    // playwrightLauncher({
+    //   product: 'webkit',
+    //   launchOptions: {
+    //     headless: true,
+    //     devtools: false
+    //   },
+    // }),
   ]
 };

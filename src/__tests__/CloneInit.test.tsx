@@ -31,6 +31,12 @@ describe('<CloneInitHarness>', () => {
       </React.StrictMode>
     );
     const linkElement = getByText(/Clone Repository/i);
+    // await new Promise((resolve) => {
+    //   setTimeout(() => {
+    //     resolve(true);
+    //   }, 2000);
+    // });
+    // debugger;
     expect(document.body.contains(linkElement));
   });
 });
