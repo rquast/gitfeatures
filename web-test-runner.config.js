@@ -10,8 +10,7 @@ const ignoredBrowserLogs = [
 module.exports = {
   testFramework: {
     config: {
-      ui: 'bdd',
-      timeout: '3600000',
+      timeout: '3600000', // 1 hour
     },
   },
   testsFinishTimeout: 3600000, // 1 hour
@@ -19,7 +18,6 @@ module.exports = {
     include: [
       'src/**/*.{js,jsx,ts,tsx}'
     ],
-    // exclude: ['**/*/_snowpack/**/*'],
   },
   plugins: [vite()],
   testRunnerHtml: testFramework => `
@@ -55,23 +53,23 @@ module.exports = {
     playwrightLauncher({
       product: 'chromium',
       launchOptions: {
-        headless: false,
-        devtools: true
+        headless: true,
+        devtools: false
       },
     }),
-    // playwrightLauncher({
-    //   product: 'firefox',
-    //   launchOptions: {
-    //     headless: true,
-    //     devtools: false
-    //   },
-    // }),
-    // playwrightLauncher({
-    //   product: 'webkit',
-    //   launchOptions: {
-    //     headless: true,
-    //     devtools: false
-    //   },
-    // }),
+    playwrightLauncher({
+      product: 'firefox',
+      launchOptions: {
+        headless: true,
+        devtools: false
+      },
+    }),
+    playwrightLauncher({
+      product: 'webkit',
+      launchOptions: {
+        headless: true,
+        devtools: false
+      },
+    }),
   ]
 };

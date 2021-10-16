@@ -81,6 +81,7 @@ export default defineConfig({
       plugins: [resolveFixup]
     },
     include: [
+      'gherkin-testkit',
       'react-hook-thunk-reducer',
       'chai',
       'isomorphic-git',
