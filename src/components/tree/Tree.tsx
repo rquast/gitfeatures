@@ -1,5 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import SortableTree, { isDescendant, TreeItem } from 'react-sortable-tree';
+//@ts-ignore
+import SortableTree, { isDescendant } from '@nosferatu500/react-sortable-tree';
+//@ts-ignore
+import type { TreeItem } from '@nosferatu500/react-sortable-tree';
 import TreeNodeRenderer from '../renderer/TreeNodeRenderer';
 import { store as exampleMapStore } from '../../context/ExampleMapContext';
 import { Flex, Box, Text, useColorMode } from '@chakra-ui/react';
@@ -159,6 +162,7 @@ function Tree({
               { type, action: touchedAction() }
             ]);
           }}
+          //@ts-ignore
           onVisibilityToggle={async ({ treeData, node, expanded }) => {
             // is the selected node a descendent of the toggled node?
             if (isDescendant(node, getSelectedNode() as TreeItem)) {
@@ -208,6 +212,7 @@ function Tree({
           }}
           theme={{ nodeContentRenderer: TreeNodeRenderer } as any}
           canDrop={canDrop}
+          //@ts-ignore
           generateNodeProps={(rowInfo) => {
             const nodeProps: any = {
               onClick: (event: any) => nodeClicked(event, rowInfo)

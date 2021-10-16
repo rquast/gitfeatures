@@ -1,6 +1,6 @@
 {
   "name": "gitfeatures",
-  "version": "0.0.1-alpha.22",
+  "version": "0.0.1-alpha.23",
   "description": "A browser-based specification editor and feature toggle system that uses Git for version control",
   "keywords": [
     "BDD",

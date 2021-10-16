@@ -100,8 +100,8 @@ function ChangeTreeNodeModal() {
           }
         }
         return true;
-      } catch (e) {
-        return e.message;
+      } catch (err: any) {
+        return err.message;
       }
     } else {
       return 'Not a valid title: must be less than 64 characters';

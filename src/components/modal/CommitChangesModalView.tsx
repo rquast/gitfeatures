@@ -65,10 +65,10 @@ function CommitChangesModalView() {
       if (values['commit-push']) {
         await doPush();
       }
-    } catch (e) {
+    } catch (err: any) {
       toast({
         title: 'Commit Failed.',
-        description: e.message,
+        description: err.message,
         status: 'error',
         duration: 9000,
         isClosable: true
@@ -89,10 +89,10 @@ function CommitChangesModalView() {
         duration: 9000,
         isClosable: true
       });
-    } catch (e) {
+    } catch (err: any) {
       toast({
         title: 'Push Failed.',
-        description: e.message,
+        description: err.message,
         status: 'error',
         duration: 9000,
         isClosable: true

@@ -65,9 +65,11 @@ const html = `
   </style>
 </head>
 <body>
-<div id="root"></div>
-<noscript>You need to enable JavaScript to run this app.</noscript>
-<script type="module" src="/_dist_/index.js"></script>
+  <div id="root"></div>
+  <script>
+    window.global = window
+  </script>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
 `;

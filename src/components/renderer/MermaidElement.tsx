@@ -1,6 +1,7 @@
 import { HStack, Tag, TagLabel, useColorMode } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-import mermaid from 'mermaid';
+//@ts-ignore
+import * as mermaid from 'mermaid/dist/mermaid.min';
 import parse from 'html-react-parser';
 import { customAlphabet } from 'nanoid';
 

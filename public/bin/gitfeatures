@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 process.chdir(path.resolve(__dirname, '..'));
 let title, description, port, proxies, config, isLaunchingBrowser = undefined;
+const html = fs.readFileSync(path.resolve(__dirname, '../index.html'), { encoding: 'utf8', flag: 'r' });
 process.argv.forEach(function (val, index, array) {
   switch (val) {
     case '--help':
@@ -49,4 +50,4 @@ process.argv.forEach(function (val, index, array) {
   }
 });
 
-require('../index.js')(title, description, port, proxies, config, isLaunchingBrowser);
+require('../index.js')(html, title, description, port, proxies, config, isLaunchingBrowser);

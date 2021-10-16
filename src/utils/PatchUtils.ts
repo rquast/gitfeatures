@@ -1,4 +1,4 @@
-import jsonpatch, { Operation } from 'fast-json-patch';
+import jsonpatch from 'fast-json-patch';
 import type {
   AppState,
   MapTreesState,
@@ -28,11 +28,11 @@ export const includePaths = (state: any, paths: string[]) => {
 export const createAppStatePatch = (
   newState: AppState,
   oldState: AppState
-): Operation[] => {
+): any[] => {
   return jsonpatch.compare(oldState, newState);
 };
 
-export const applyAppStatePatch = (state: AppState, patch: Operation[]) => {
+export const applyAppStatePatch = (state: AppState, patch: any[]) => {
   return jsonpatch.applyPatch(state, patch, false, false).newDocument;
 };
 
@@ -40,7 +40,7 @@ export const createPatch = (
   newState: SpecTreeState | MapTreesState,
   oldState: SpecTreeState | MapTreesState,
   filter: PatchFilter = { excludePaths: [] }
-): Operation[] => {
+): any[] => {
   if (filter && filter.includePaths) {
     return jsonpatch.compare(
       includePaths(newState, filter.includePaths),
@@ -57,7 +57,7 @@ export const createPatch = (
 
 export const applyPatch = (
   state: SpecTreeState | MapTreesState,
-  patch: Operation[]
+  patch: any[]
 ) => {
   return jsonpatch.applyPatch(state, patch, false, false).newDocument;
 };
